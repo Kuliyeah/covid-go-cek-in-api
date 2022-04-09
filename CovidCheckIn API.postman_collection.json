@@ -60,7 +60,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"usernamePengunjung\": \"lovanto\",\n    \"passwordPengunjung\": \"lovanto123\",\n    \"namaPengunjung\": \"Rifky Lovanto\",\n    \"alamatPengunjung\": \"Jl. Telekomunikasi no.1 terusan buah batu, asrama putra telkom university gedung 9 kamar 218\",\n    \"noHpPengunjung\": \"087823837566\",\n    \"umurPengunjung\": 20,\n    \"jenisKelaminPengunjung\": \"Pria\",\n    \"statusKesehatan\": \"Negatif\"\n}",
+							"raw": "{\n    \"usernamePengunjung\": \"lovanto2\",\n    \"passwordPengunjung\": \"lovanto123\",\n    \"namaPengunjung\": \"Rifky Lovanto\",\n    \"alamatPengunjung\": \"Jl. Telekomunikasi no.1 terusan buah batu, asrama putra telkom university gedung 9 kamar 218\",\n    \"noHpPengunjung\": \"087823837566\",\n    \"umurPengunjung\": 20,\n    \"jenisKelaminPengunjung\": \"Pria\",\n    \"statusKesehatan\": \"Negatif\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -81,7 +81,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "5"
+									"value": "8"
 								}
 							]
 						}
