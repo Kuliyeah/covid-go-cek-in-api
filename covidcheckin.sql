@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 09, 2022 at 11:40 AM
+-- Generation Time: Apr 09, 2022 at 12:01 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -95,8 +95,8 @@ CREATE TABLE `pengunjung` (
   `usernamePengunjung` varchar(50) NOT NULL,
   `passwordPengunjung` varchar(50) NOT NULL,
   `namaPengunjung` varchar(50) NOT NULL,
-  `alamatPengunjung` varchar(100) NOT NULL,
-  `noHpPengunjung` varchar(12) NOT NULL,
+  `alamatPengunjung` varchar(255) NOT NULL,
+  `noHpPengunjung` varchar(15) NOT NULL,
   `umurPengunjung` int(3) NOT NULL,
   `jenisKelaminPengunjung` enum('Pria','Wanita') NOT NULL,
   `statusKesehatan` enum('Negatif','Positif','ODP','OTG') NOT NULL
@@ -166,7 +166,7 @@ ALTER TABLE `mitra`
 -- AUTO_INCREMENT for table `pengunjung`
 --
 ALTER TABLE `pengunjung`
-  MODIFY `idPengunjung` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idPengunjung` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
