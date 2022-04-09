@@ -1,0 +1,74 @@
+{
+	"info": {
+		"_postman_id": "b9facade-62d0-41b8-af6e-7e2946122cb4",
+		"name": "CovidCheckIn API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Pengunjung",
+			"item": [
+				{
+					"name": "Get One Pengunjung",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8787/v1/pengunjung/:idPengunjung",
+							"host": [
+								"localhost"
+							],
+							"port": "8787",
+							"path": [
+								"v1",
+								"pengunjung",
+								":idPengunjung"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Many Pengunjung",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8787/v1/pengunjung",
+							"host": [
+								"localhost"
+							],
+							"port": "8787",
+							"path": [
+								"v1",
+								"pengunjung"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Health Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8787",
+					"host": [
+						"localhost"
+					],
+					"port": "8787"
+				}
+			},
+			"response": []
+		}
+	]
+}
