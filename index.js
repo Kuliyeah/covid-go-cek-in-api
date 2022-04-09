@@ -32,6 +32,7 @@ async function main() {
     router.get('/v1/pengunjung', pengunjungHandler.getManyPengunjung.bind(pengunjungHandler));
     router.get('/v1/pengunjung/:id', pengunjungHandler.getOnePengunjung.bind(pengunjungHandler));
     router.post('/v1/pengunjung', pengunjungHandler.createPengunjung.bind(pengunjungHandler));
+    router.put('/v1/pengunjung/:id', pengunjungHandler.updatePengunjung.bind(pengunjungHandler));
     router.get('/', function(_, res) {
         responses.success(res, 200, 'OK', 'application is running properly', null, null);
     });

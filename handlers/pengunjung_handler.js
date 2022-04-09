@@ -31,6 +31,18 @@ class PengunjungHandler {
             response.error(res, err);
         }
     }
+
+    async updatePengunjung(req, res) {
+        const id = req.params.id;
+        const update = req.body;
+
+        try {
+            const result = await this.service.updatePengunjung(id, update);
+            response.success(res, 200, 'MODIFIED', 'an pengunjung data has successfuly modified', result, null);
+        } catch (err) {
+            response.error(res, err);
+        }
+    }
 }
 
 module.exports = PengunjungHandler;
