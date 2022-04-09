@@ -15,9 +15,7 @@ class PengunjungService {
             const connection = await this.dbPool.getConnection();
 
             const queryResult = await connection.execute('SELECT * FROM pengunjung WHERE idPengunjung = ?', [id]);
-            if (queryResult[0].length < 1) {
-                throw new SQLNoRow();
-            }
+            if (queryResult[0].length < 1) throw new SQLNoRow();
 
             connection.release();
 
@@ -26,15 +24,8 @@ class PengunjungService {
         } catch (err) {
             console.error(err.message);
 
-            let error;
-
-            if (err instanceof SQLNoRow) {
-                error = new NotFoundError('visitor data is not found');
-            } else {
-                error = new InternalServerError('an error occurred while getting visitor data');
-            }
-
-            throw error;
+            if (err instanceof SQLNoRow) throw new NotFoundError('visitor data is not found');
+            throw new InternalServerError('an error occurred while getting visitor data');
         }
     }
 
@@ -43,9 +34,7 @@ class PengunjungService {
             const connection = await this.dbPool.getConnection();
 
             const queryResult = await connection.execute('SELECT * FROM pengunjung ORDER BY idPengunjung DESC');
-            if (queryResult[0].length < 1) {
-                throw new NotFoundError('visitor data is not found');
-            }
+            if (queryResult[0].length < 1) throw new NotFoundError('visitor data is not found');
 
             connection.release();
 
@@ -54,15 +43,8 @@ class PengunjungService {
         } catch (err) {
             console.error(err.message);
 
-            let error;
-
-            if (err instanceof SQLNoRow) {
-                error = new NotFoundError('visitor data is not found');
-            } else {
-                error = new InternalServerError('an error occurred while getting visitor data');
-            }
-
-            throw error;
+            if (err instanceof SQLNoRow) throw new NotFoundError('visitor data is not found');
+            throw new InternalServerError('an error occurred while getting visitor data');
         }
     }
 
@@ -94,10 +76,7 @@ class PengunjungService {
         } catch (err) {
             console.error(err.message);
 
-            if (err instanceof Joi.ValidationError) {
-                throw new BadRequest(err.message);
-            }
-
+            if (err instanceof Joi.ValidationError) throw new BadRequest(err.message);
             throw new InternalServerError('an error occurred while getting pengunjung');
         }
     }
@@ -120,9 +99,7 @@ class PengunjungService {
             const connection = await this.dbPool.getConnection();
 
             let queryResult = await connection.execute('SELECT idPengunjung FROM pengunjung WHERE idPengunjung = ?', [id]);
-            if (queryResult[0].length < 1) {
-                throw new SQLNoRow();
-            }
+            if (queryResult[0].length < 1) throw new SQLNoRow();
 
             queryResult = await connection.execute('UPDATE pengunjung SET usernamePengunjung = ?,passwordPengunjung = ?, namaPengunjung = ?, alamatPengunjung = ?, noHpPengunjung = ?, umurPengunjung = ?, jenisKelaminPengunjung = ?, statusKesehatan = ? WHERE idPengunjung = ?', [
                 pengunjung.usernamePengunjung, pengunjung.passwordPengunjung, pengunjung.namaPengunjung, pengunjung.alamatPengunjung, pengunjung.noHpPengunjung, pengunjung.umurPengunjung, pengunjung.jenisKelaminPengunjung, pengunjung.statusKesehatan, id
@@ -135,15 +112,8 @@ class PengunjungService {
         } catch (err) {
             console.error(err.message);
 
-            let error;
-
-            if (err instanceof SQLNoRow) {
-                error = new NotFoundError('pengunjung data is not found');
-            } else {
-                error = new InternalServerError('an error occurred while getting pengunjung data');
-            }
-
-            throw error;
+            if (err instanceof SQLNoRow) throw new NotFoundError('pengunjung data is not found');
+            throw new InternalServerError('an error occurred while getting pengunjung data');
         }
     }
 }
