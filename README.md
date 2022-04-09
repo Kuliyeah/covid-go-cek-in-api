@@ -3,7 +3,7 @@ A simple backend application that manage covid go check in apps
 
 # How to run
 - Install Node.js (Latest version is recommended)
-- Make sure the MySQL Database is installed first, then create database `tefa_backend`
+- Make sure the MySQL Database is installed first, then create database `covidcheckin`
 - Import MySQL database properly
 - Fork the repository
 - Clone to your local repository on your computer
