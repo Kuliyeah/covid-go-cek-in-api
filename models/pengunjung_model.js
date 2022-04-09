@@ -8,8 +8,8 @@ const getCreatePengunjungModel = function() {
         alamatPengunjung: joi.string().required(),
         noHpPengunjung: joi.string().required(),
         umurPengunjung: joi.number().required(),
-        jenisKelaminPengunjung: joi.number().required(),
-        statusKesehatan: joi.number().required()
+        jenisKelaminPengunjung: joi.string().valid('Pria', 'Wanita').required(),
+        statusKesehatan: joi.string().valid('Negatif', 'Positif', 'ODP', 'OTG').required()
     });
     return model;
 }
@@ -22,8 +22,8 @@ const getUpdatePengunjungModel = function() {
         alamatPengunjung: joi.string().required(),
         noHpPengunjung: joi.string().required(),
         umurPengunjung: joi.number().required(),
-        jenisKelaminPengunjung: joi.number().required(),
-        statusKesehatan: joi.number().required()
+        jenisKelaminPengunjung: joi.string().valid('Pria', 'Wanita').required(),
+        statusKesehatan: joi.string().valid('Negatif', 'Positif', 'ODP', 'OTG').required()
     });
     return model;
 }
