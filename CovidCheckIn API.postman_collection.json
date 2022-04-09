@@ -54,6 +54,41 @@
 					"response": []
 				},
 				{
+					"name": "Update Pengunjung",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"usernamePengunjung\": \"lovanto\",\n    \"passwordPengunjung\": \"lovanto123\",\n    \"namaPengunjung\": \"Rifky Lovanto\",\n    \"alamatPengunjung\": \"Jl. Telekomunikasi no.1 terusan buah batu, asrama putra telkom university gedung 9 kamar 218\",\n    \"noHpPengunjung\": \"087823837566\",\n    \"umurPengunjung\": 20,\n    \"jenisKelaminPengunjung\": \"Pria\",\n    \"statusKesehatan\": \"Negatif\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8787/v1/pengunjung/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8787",
+							"path": [
+								"v1",
+								"pengunjung",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Create Pengunjung",
 					"request": {
 						"method": "POST",
