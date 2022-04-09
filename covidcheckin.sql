@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 09, 2022 at 10:27 AM
+-- Generation Time: Apr 09, 2022 at 11:40 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -57,18 +57,6 @@ CREATE TABLE `kunjungan` (
   `statusKunjungan` enum('Selesai','Dalam Kunjungan') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `kunjungan`
---
-
-INSERT INTO `kunjungan` (`idKunjungan`, `idPengunjung`, `idMitra`, `tanggal`, `checkin`, `checkout`, `statusKunjungan`) VALUES
-(1, 6, 3, '29-12-2021', '09:00:00', '10:15:00', 'Selesai'),
-(2, 1, 1, '29-12-2021', '09:10:00', '-', 'Dalam Kunjungan'),
-(3, 4, 3, '29-12-2021', '09:59:50', '12:00:17', 'Selesai'),
-(4, 2, 4, '29-12-2021', '13:21:00', '14:05:01', 'Selesai'),
-(5, 3, 4, '29-12-2021', '13:25:55', '-', 'Dalam Kunjungan'),
-(6, 5, 5, '29-12-2021', '14:22:04', '-', 'Dalam Kunjungan');
-
 -- --------------------------------------------------------
 
 --
@@ -104,10 +92,12 @@ INSERT INTO `mitra` (`idMitra`, `namaMitra`, `alamatMitra`, `noHpMitra`, `jenisU
 
 CREATE TABLE `pengunjung` (
   `idPengunjung` int(10) NOT NULL,
+  `usernamePengunjung` varchar(50) NOT NULL,
+  `passwordPengunjung` varchar(50) NOT NULL,
   `namaPengunjung` varchar(50) NOT NULL,
   `alamatPengunjung` varchar(100) NOT NULL,
   `noHpPengunjung` varchar(12) NOT NULL,
-  `umurPengunjung` int(2) NOT NULL,
+  `umurPengunjung` int(3) NOT NULL,
   `jenisKelaminPengunjung` enum('Pria','Wanita') NOT NULL,
   `statusKesehatan` enum('Negatif','Positif','ODP','OTG') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -116,13 +106,9 @@ CREATE TABLE `pengunjung` (
 -- Dumping data for table `pengunjung`
 --
 
-INSERT INTO `pengunjung` (`idPengunjung`, `namaPengunjung`, `alamatPengunjung`, `noHpPengunjung`, `umurPengunjung`, `jenisKelaminPengunjung`, `statusKesehatan`) VALUES
-(1, 'Tatang Ruhiyan', 'Jl Sekolah Kencana 4 Bl B/604, Dki Jakarta', '08881213131', 18, 'Pria', 'Negatif'),
-(2, 'Bambang Jaelani', 'Jl Raya Bekasi, Dki Jakarta', '08909028323', 23, 'Pria', 'Negatif'),
-(3, 'Ismed Sofian', 'Gg. Pegangsaan timur, Jakarta.', '083134242424', 25, 'Pria', 'ODP'),
-(4, 'Ayu Fadhila', 'Gg. Pegangsaan barat, Jakarta', '082932424233', 22, 'Wanita', 'Negatif'),
-(5, 'Salsabilla Aini', 'Jl. Manasaja, Kec. Apasaja, Jateng', '083134141312', 22, 'Wanita', 'Negatif'),
-(6, 'Aina Salsabilla Muslim', 'Bandar Jaya, Lampung', '081121311342', 21, 'Wanita', 'Negatif');
+INSERT INTO `pengunjung` (`idPengunjung`, `usernamePengunjung`, `passwordPengunjung`, `namaPengunjung`, `alamatPengunjung`, `noHpPengunjung`, `umurPengunjung`, `jenisKelaminPengunjung`, `statusKesehatan`) VALUES
+(5, 'ainiChan', 'ainiChantikk123', 'Salsabilla Aini', 'Jl. Manasaja, Kec. Apasaja, Jateng', '083134141312', 22, 'Wanita', 'Negatif'),
+(6, 'ainiChanMuslim', 'ainiChantikk123', 'Aina Salsabilla Muslim', 'Bandar Jaya, Lampung', '081121311342', 21, 'Wanita', 'Negatif');
 
 --
 -- Indexes for dumped tables

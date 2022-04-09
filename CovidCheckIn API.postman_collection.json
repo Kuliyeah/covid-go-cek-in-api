@@ -26,8 +26,8 @@
 							],
 							"variable": [
 								{
-									"key": "id",
-									"value": "6"
+									"key": "idPengunjung",
+									"value": "5"
 								}
 							]
 						}
@@ -39,6 +39,34 @@
 					"request": {
 						"method": "GET",
 						"header": [],
+						"url": {
+							"raw": "localhost:8787/v1/pengunjung",
+							"host": [
+								"localhost"
+							],
+							"port": "8787",
+							"path": [
+								"v1",
+								"pengunjung"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Pengunjung",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"usernamePengunjung\": \"lovanto\",\n    \"passwordPengunjung\": \"lovanto123\",\n    \"namaPengunjung\": \"Rifky Lovanto\",\n    \"alamatPengunjung\": \"Jl. Telekomunikasi no.1 terusan buah batu, asrama putra telkom university gedung 9 kamar 218\",\n    \"noHpPengunjung\": \"087823837566\",\n    \"umurPengunjung\": 20,\n    \"jenisKelaminPengunjung\": \"Pria\",\n    \"statusKesehatan\": \"Negatif\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "localhost:8787/v1/pengunjung",
 							"host": [
