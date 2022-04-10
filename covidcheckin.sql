@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 09, 2022 at 12:01 PM
+-- Generation Time: Apr 10, 2022 at 10:57 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -66,8 +66,8 @@ CREATE TABLE `kunjungan` (
 CREATE TABLE `mitra` (
   `idMitra` int(10) NOT NULL,
   `namaMitra` varchar(50) NOT NULL,
-  `alamatMitra` varchar(100) NOT NULL,
-  `noHpMitra` varchar(12) NOT NULL,
+  `alamatMitra` varchar(255) NOT NULL,
+  `noHpMitra` varchar(15) NOT NULL,
   `jenisUsaha` varchar(100) NOT NULL,
   `deskripsi` text NOT NULL,
   `fotoUsaha` varchar(100) NOT NULL,
@@ -108,7 +108,8 @@ CREATE TABLE `pengunjung` (
 
 INSERT INTO `pengunjung` (`idPengunjung`, `usernamePengunjung`, `passwordPengunjung`, `namaPengunjung`, `alamatPengunjung`, `noHpPengunjung`, `umurPengunjung`, `jenisKelaminPengunjung`, `statusKesehatan`) VALUES
 (5, 'ainiChan', 'ainiChantikk123', 'Salsabilla Aini', 'Jl. Manasaja, Kec. Apasaja, Jateng', '083134141312', 22, 'Wanita', 'Negatif'),
-(6, 'ainiChanMuslim', 'ainiChantikk123', 'Aina Salsabilla Muslim', 'Bandar Jaya, Lampung', '081121311342', 21, 'Wanita', 'Negatif');
+(6, 'ainiChanMuslim', 'ainiChantikk123', 'Aina Salsabilla Muslim', 'Bandar Jaya, Lampung', '081121311342', 21, 'Wanita', 'Negatif'),
+(9, 'lovanto2', 'lovanto123', 'Rifky Lovanto', 'Jl. Telekomunikasi no.1 terusan buah batu, asrama putra telkom university gedung 9 kamar 218', '087823837566', 20, 'Pria', 'Negatif');
 
 --
 -- Indexes for dumped tables
@@ -166,7 +167,7 @@ ALTER TABLE `mitra`
 -- AUTO_INCREMENT for table `pengunjung`
 --
 ALTER TABLE `pengunjung`
-  MODIFY `idPengunjung` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idPengunjung` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
