@@ -27,7 +27,34 @@
 							"variable": [
 								{
 									"key": "idPengunjung",
-									"value": "5"
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One Pengunjung by Username",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8787/v1/pengunjung/login/:usernamePengunjung",
+							"host": [
+								"localhost"
+							],
+							"port": "8787",
+							"path": [
+								"v1",
+								"pengunjung",
+								"login",
+								":usernamePengunjung"
+							],
+							"variable": [
+								{
+									"key": "usernamePengunjung",
+									"value": "lovanto2"
 								}
 							]
 						}
