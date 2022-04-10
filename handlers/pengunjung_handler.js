@@ -14,6 +14,15 @@ class PengunjungHandler {
         }
     }
 
+    async getOnePengunjungByUsername(req, res) {
+        try {
+            const result = await this.service.getOnePengunjungByUsername(req.params.username);
+            response.success(res, 200, 'OK', 'detail of an pengunjung', result, null);
+        } catch (err) {
+            response.error(res, err);
+        }
+    }
+
     async getManyPengunjung(req, res) {
         try {
             const result = await this.service.getManyPengunjung();

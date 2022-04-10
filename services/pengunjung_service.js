@@ -48,6 +48,25 @@ class PengunjungService {
         }
     }
 
+    async getOnePengunjungByUsername(username) {
+        try {
+            const connection = await this.dbPool.getConnection();
+
+            const queryResult = await connection.execute('SELECT * FROM pengunjung WHERE usernamePengunjung = ?', [username]);
+            if (queryResult[0].length < 1) throw new SQLNoRow();
+
+            connection.release();
+
+            return queryResult[0][0]
+
+        } catch (err) {
+            console.error(err.message);
+
+            if (err instanceof SQLNoRow) throw new NotFoundError('visitor data is not found');
+            throw new InternalServerError('an error occurred while getting visitor data');
+        }
+    }
+
     async createPengunjung(params) {
         try {
             await PengunjungModel.getCreatePengunjungModel().validateAsync(params);
