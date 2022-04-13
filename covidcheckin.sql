@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 10, 2022 at 10:57 AM
+-- Generation Time: Apr 13, 2022 at 04:55 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -109,7 +109,7 @@ CREATE TABLE `pengunjung` (
 INSERT INTO `pengunjung` (`idPengunjung`, `usernamePengunjung`, `passwordPengunjung`, `namaPengunjung`, `alamatPengunjung`, `noHpPengunjung`, `umurPengunjung`, `jenisKelaminPengunjung`, `statusKesehatan`) VALUES
 (5, 'ainiChan', 'ainiChantikk123', 'Salsabilla Aini', 'Jl. Manasaja, Kec. Apasaja, Jateng', '083134141312', 22, 'Wanita', 'Negatif'),
 (6, 'ainiChanMuslim', 'ainiChantikk123', 'Aina Salsabilla Muslim', 'Bandar Jaya, Lampung', '081121311342', 21, 'Wanita', 'Negatif'),
-(9, 'lovanto2', 'lovanto123', 'Rifky Lovanto', 'Jl. Telekomunikasi no.1 terusan buah batu, asrama putra telkom university gedung 9 kamar 218', '087823837566', 20, 'Pria', 'Negatif');
+(9, 'lovanto2', 'fda890869b33164fe9d02dbab35348b9', 'Rifky Lovanto', 'Jl. Telekomunikasi no.1 terusan buah batu, asrama putra telkom university gedung 9 kamar 218', '087823837566', 20, 'Pria', 'Negatif');
 
 --
 -- Indexes for dumped tables
