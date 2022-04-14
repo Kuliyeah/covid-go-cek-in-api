@@ -75,6 +75,7 @@ class PengunjungService {
                 usernamePengunjung: params.usernamePengunjung,
                 passwordPengunjung: params.passwordPengunjung,
                 namaPengunjung: params.namaPengunjung,
+                nikPengunjung: params.nikPengunjung,
                 alamatPengunjung: params.alamatPengunjung,
                 noHpPengunjung: params.noHpPengunjung,
                 umurPengunjung: params.umurPengunjung,
@@ -84,8 +85,8 @@ class PengunjungService {
 
             const connection = await this.dbPool.getConnection();
 
-            const queryResult = await connection.execute('INSERT INTO pengunjung SET usernamePengunjung = ?,passwordPengunjung = ?, namaPengunjung = ?, alamatPengunjung = ?, noHpPengunjung = ?, umurPengunjung = ?, jenisKelaminPengunjung = ?, statusKesehatan = ?', [
-                pengunjung.usernamePengunjung, pengunjung.passwordPengunjung, pengunjung.namaPengunjung, pengunjung.alamatPengunjung, pengunjung.noHpPengunjung, pengunjung.umurPengunjung, pengunjung.jenisKelaminPengunjung, pengunjung.statusKesehatan
+            const queryResult = await connection.execute('INSERT INTO pengunjung SET usernamePengunjung = ?,passwordPengunjung = ?, namaPengunjung = ?, nikPengunjung = ?, alamatPengunjung = ?, noHpPengunjung = ?, umurPengunjung = ?, jenisKelaminPengunjung = ?, statusKesehatan = ?', [
+                pengunjung.usernamePengunjung, pengunjung.passwordPengunjung, pengunjung.namaPengunjung, pengunjung.nikPengunjung, pengunjung.alamatPengunjung, pengunjung.noHpPengunjung, pengunjung.umurPengunjung, pengunjung.jenisKelaminPengunjung, pengunjung.statusKesehatan
             ]);
 
             connection.release();
@@ -107,6 +108,7 @@ class PengunjungService {
             usernamePengunjung: params.usernamePengunjung,
             passwordPengunjung: params.passwordPengunjung,
             namaPengunjung: params.namaPengunjung,
+            nikPengunjung: params.nikPengunjung,
             alamatPengunjung: params.alamatPengunjung,
             noHpPengunjung: params.noHpPengunjung,
             umurPengunjung: params.umurPengunjung,
@@ -120,8 +122,8 @@ class PengunjungService {
             let queryResult = await connection.execute('SELECT idPengunjung FROM pengunjung WHERE idPengunjung = ?', [id]);
             if (queryResult[0].length < 1) throw new SQLNoRow();
 
-            queryResult = await connection.execute('UPDATE pengunjung SET usernamePengunjung = ?,passwordPengunjung = ?, namaPengunjung = ?, alamatPengunjung = ?, noHpPengunjung = ?, umurPengunjung = ?, jenisKelaminPengunjung = ?, statusKesehatan = ? WHERE idPengunjung = ?', [
-                pengunjung.usernamePengunjung, pengunjung.passwordPengunjung, pengunjung.namaPengunjung, pengunjung.alamatPengunjung, pengunjung.noHpPengunjung, pengunjung.umurPengunjung, pengunjung.jenisKelaminPengunjung, pengunjung.statusKesehatan, id
+            queryResult = await connection.execute('UPDATE pengunjung SET usernamePengunjung = ?,passwordPengunjung = ?, namaPengunjung = ?, nikPengunjung = ?, alamatPengunjung = ?, noHpPengunjung = ?, umurPengunjung = ?, jenisKelaminPengunjung = ?, statusKesehatan = ? WHERE idPengunjung = ?', [
+                pengunjung.usernamePengunjung, pengunjung.passwordPengunjung, pengunjung.namaPengunjung, pengunjung.nikPengunjung, pengunjung.alamatPengunjung, pengunjung.noHpPengunjung, pengunjung.umurPengunjung, pengunjung.jenisKelaminPengunjung, pengunjung.statusKesehatan, id
             ]);
 
             connection.release();
