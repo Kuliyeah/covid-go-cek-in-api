@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 13, 2022 at 04:55 PM
+-- Generation Time: Apr 16, 2022 at 07:58 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -94,6 +94,7 @@ CREATE TABLE `pengunjung` (
   `idPengunjung` int(10) NOT NULL,
   `usernamePengunjung` varchar(50) NOT NULL,
   `passwordPengunjung` varchar(50) NOT NULL,
+  `nikPengunjung` varchar(16) NOT NULL,
   `namaPengunjung` varchar(50) NOT NULL,
   `alamatPengunjung` varchar(255) NOT NULL,
   `noHpPengunjung` varchar(15) NOT NULL,
@@ -106,10 +107,10 @@ CREATE TABLE `pengunjung` (
 -- Dumping data for table `pengunjung`
 --
 
-INSERT INTO `pengunjung` (`idPengunjung`, `usernamePengunjung`, `passwordPengunjung`, `namaPengunjung`, `alamatPengunjung`, `noHpPengunjung`, `umurPengunjung`, `jenisKelaminPengunjung`, `statusKesehatan`) VALUES
-(5, 'ainiChan', 'ainiChantikk123', 'Salsabilla Aini', 'Jl. Manasaja, Kec. Apasaja, Jateng', '083134141312', 22, 'Wanita', 'Negatif'),
-(6, 'ainiChanMuslim', 'ainiChantikk123', 'Aina Salsabilla Muslim', 'Bandar Jaya, Lampung', '081121311342', 21, 'Wanita', 'Negatif'),
-(9, 'lovanto2', 'fda890869b33164fe9d02dbab35348b9', 'Rifky Lovanto', 'Jl. Telekomunikasi no.1 terusan buah batu, asrama putra telkom university gedung 9 kamar 218', '087823837566', 20, 'Pria', 'Negatif');
+INSERT INTO `pengunjung` (`idPengunjung`, `usernamePengunjung`, `passwordPengunjung`, `nikPengunjung`, `namaPengunjung`, `alamatPengunjung`, `noHpPengunjung`, `umurPengunjung`, `jenisKelaminPengunjung`, `statusKesehatan`) VALUES
+(5, 'ainiChan', 'ainiChantikk123', '1234567890', 'Salsabilla Aini', 'Jl. Manasaja, Kec. Apasaja, Jateng', '083134141312', 22, 'Wanita', 'Negatif'),
+(6, 'ainiChanMuslim', 'ainiChantikk123', '0987654321', 'Aina Salsabilla Muslim', 'Bandar Jaya, Lampung', '081121311342', 21, 'Wanita', 'Negatif'),
+(9, 'lovanto2', 'fda890869b33164fe9d02dbab35348b9', '1234567098', 'Rifky Lovanto', 'Jl. Telekomunikasi no.1 terusan buah batu, asrama putra telkom university gedung 9 kamar 218', '087823837566', 20, 'Pria', 'Negatif');
 
 --
 -- Indexes for dumped tables
