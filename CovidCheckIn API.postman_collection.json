@@ -147,7 +147,53 @@
 		},
 		{
 			"name": "Mitra",
-			"item": []
+			"item": [
+				{
+					"name": "Get One Mitra",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8787/v1/mitra/:idMitra",
+							"host": [
+								"localhost"
+							],
+							"port": "8787",
+							"path": [
+								"v1",
+								"mitra",
+								":idMitra"
+							],
+							"variable": [
+								{
+									"key": "idMitra",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Many Mitra",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8787/v1/mitra",
+							"host": [
+								"localhost"
+							],
+							"port": "8787",
+							"path": [
+								"v1",
+								"mitra"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "Health Check",
