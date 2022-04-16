@@ -24,8 +24,8 @@ class PengunjungService {
         } catch (err) {
             console.error(err.message);
 
-            if (err instanceof SQLNoRow) throw new NotFoundError('visitor data is not found');
-            throw new InternalServerError('an error occurred while getting visitor data');
+            if (err instanceof SQLNoRow) throw new NotFoundError('pengunjung data is not found');
+            throw new InternalServerError('an error occurred while getting pengunjung data');
         }
     }
 
@@ -34,7 +34,7 @@ class PengunjungService {
             const connection = await this.dbPool.getConnection();
 
             const queryResult = await connection.execute('SELECT * FROM pengunjung ORDER BY idPengunjung DESC');
-            if (queryResult[0].length < 1) throw new NotFoundError('visitor data is not found');
+            if (queryResult[0].length < 1) throw new NotFoundError('pengunjung data is not found');
 
             connection.release();
 
@@ -43,8 +43,8 @@ class PengunjungService {
         } catch (err) {
             console.error(err.message);
 
-            if (err instanceof SQLNoRow) throw new NotFoundError('visitor data is not found');
-            throw new InternalServerError('an error occurred while getting visitor data');
+            if (err instanceof SQLNoRow) throw new NotFoundError('pengunjung data is not found');
+            throw new InternalServerError('an error occurred while getting pengunjung data');
         }
     }
 
@@ -62,8 +62,8 @@ class PengunjungService {
         } catch (err) {
             console.error(err.message);
 
-            if (err instanceof SQLNoRow) throw new NotFoundError('visitor data is not found');
-            throw new InternalServerError('an error occurred while getting visitor data');
+            if (err instanceof SQLNoRow) throw new NotFoundError('pengunjung data is not found');
+            throw new InternalServerError('an error occurred while getting pengunjung data');
         }
     }
 

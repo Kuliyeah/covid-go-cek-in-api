@@ -5,6 +5,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const PengunjungService = require('./services/pengunjung_service');
 const PengunjungHandler = require('./handlers/pengunjung_handler');
+const MitraService = require('./services/mitra_service');
+const MitraHandler = require('./handlers/mitra_handler');
 
 const responses = require('./responses/responses');
 
@@ -24,6 +26,8 @@ async function main() {
 
     const pengunjungService = new PengunjungService(promiseMysqlPool);
     const pengunjungHandler = new PengunjungHandler(pengunjungService);
+    const mitraService = new MitraService(promiseMysqlPool);
+    const mitraHandler = new MitraHandler(mitraService);
 
     const router = express();
     router.use(bodyParser.urlencoded({ extended: false }));
@@ -34,6 +38,10 @@ async function main() {
     router.get('/v1/pengunjung/login/:username', pengunjungHandler.getOnePengunjungByUsername.bind(pengunjungHandler));
     router.post('/v1/pengunjung', pengunjungHandler.createPengunjung.bind(pengunjungHandler));
     router.put('/v1/pengunjung/:id', pengunjungHandler.updatePengunjung.bind(pengunjungHandler));
+
+    router.get('/v1/mitra', mitraHandler.getManyMitra.bind(mitraHandler));
+    router.get('/v1/mitra/:id', mitraHandler.getOneMitra.bind(mitraHandler));
+
     router.get('/', function(_, res) {
         responses.success(res, 200, 'OK', 'application is running properly', null, null);
     });
