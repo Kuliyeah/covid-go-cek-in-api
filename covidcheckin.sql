@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 16, 2022 at 07:58 PM
+-- Generation Time: Apr 18, 2022 at 12:10 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -57,6 +57,15 @@ CREATE TABLE `kunjungan` (
   `statusKunjungan` enum('Selesai','Dalam Kunjungan') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `kunjungan`
+--
+
+INSERT INTO `kunjungan` (`idKunjungan`, `idPengunjung`, `idMitra`, `tanggal`, `checkin`, `checkout`, `statusKunjungan`) VALUES
+(7, 9, 2, '19-09-2021', 'Yes', 'Yes', 'Selesai'),
+(8, 9, 4, '29-09-2021', 'Yes', 'Yes', 'Dalam Kunjungan'),
+(9, 5, 3, '11-09-2021', 'Yes', 'No', 'Selesai');
+
 -- --------------------------------------------------------
 
 --
@@ -80,9 +89,9 @@ CREATE TABLE `mitra` (
 
 INSERT INTO `mitra` (`idMitra`, `namaMitra`, `alamatMitra`, `noHpMitra`, `jenisUsaha`, `deskripsi`, `fotoUsaha`, `status`) VALUES
 (1, 'Lasco Kaffe', 'Jl. Buah Batu No.54, Burangrang, Kec. Lengkong, Kota Bandung, Jawa Barat 402621', '08210000001', 'Kaffe1', 'Kaffe1', '', 'Sudah Verifikasi'),
+(2, 'Telyu Coffee', 'Lingkungan Telkom University, Bandung, Indonesia', '088131434225', 'Kaffe', 'Menjual aneka minuman mahasiswa', '', 'Belum Verifikasi'),
 (3, 'Lotte Mart', 'Jl. Trans Sumatera, Lampung', '08219999990', 'Modern Market', 'Tempat grosir termurah', '', 'Belum Verifikasi'),
-(4, 'Transmart Bubat', 'Terusan Buah Batu, Bandung', '08222909900', 'Modern market dan tempat hiburan', 'tempat hiburan keluarga dan penjualan', '', 'Sudah Verifikasi'),
-(5, 'Telyu Coffee', 'Lingkungan Telkom University, Bandung, Indonesia', '088131434225', 'Kaffe', 'Menjual aneka minuman mahasiswa', '', 'Belum Verifikasi');
+(4, 'Transmart Bubat', 'Terusan Buah Batu, Bandung', '08222909900', 'Modern market dan tempat hiburan', 'tempat hiburan keluarga dan penjualan', '', 'Sudah Verifikasi');
 
 -- --------------------------------------------------------
 
@@ -156,7 +165,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `kunjungan`
 --
 ALTER TABLE `kunjungan`
-  MODIFY `idKunjungan` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idKunjungan` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `mitra`
