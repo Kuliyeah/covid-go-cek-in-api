@@ -28,6 +28,25 @@ class MitraService {
         }
     }
 
+    async getMitraByNama(nama) {
+        try {
+            const connection = await this.dbPool.getConnection();
+
+            const queryResult = await connection.execute('SELECT * FROM mitra WHERE namaMitra LIKE ?', ['%' + nama + '%']);
+            if (queryResult[0].length < 1) throw new SQLNoRow();
+
+            connection.release();
+
+            return queryResult[0]
+
+        } catch (err) {
+            console.error(err.message);
+
+            if (err instanceof SQLNoRow) throw new NotFoundError('mitra data is not found');
+            throw new InternalServerError('an error occurred while getting mitra data');
+        }
+    }
+
     async getManyMitra() {
         try {
             const connection = await this.dbPool.getConnection();

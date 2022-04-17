@@ -7,7 +7,6 @@ const PengunjungService = require('./services/pengunjung_service');
 const PengunjungHandler = require('./handlers/pengunjung_handler');
 const MitraService = require('./services/mitra_service');
 const MitraHandler = require('./handlers/mitra_handler');
-
 const responses = require('./responses/responses');
 
 // instantiate configs
@@ -41,6 +40,7 @@ async function main() {
 
     router.get('/v1/mitra', mitraHandler.getManyMitra.bind(mitraHandler));
     router.get('/v1/mitra/:id', mitraHandler.getOneMitra.bind(mitraHandler));
+    router.get('/v1/mitra/cari/:nama', mitraHandler.getMitraByNama.bind(mitraHandler));
 
     router.get('/', function(_, res) {
         responses.success(res, 200, 'OK', 'application is running properly', null, null);
