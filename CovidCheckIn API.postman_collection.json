@@ -9,7 +9,7 @@
 			"name": "Pengunjung",
 			"item": [
 				{
-					"name": "Get One Pengunjung",
+					"name": "Get One Pengunjung by ID",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -149,7 +149,7 @@
 			"name": "Mitra",
 			"item": [
 				{
-					"name": "Get One Mitra",
+					"name": "Get One Mitra by ID",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -175,6 +175,33 @@
 					"response": []
 				},
 				{
+					"name": "Get Mitra by Nama",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8787/v1/mitra/cari/:namaMitra",
+							"host": [
+								"localhost"
+							],
+							"port": "8787",
+							"path": [
+								"v1",
+								"mitra",
+								"cari",
+								":namaMitra"
+							],
+							"variable": [
+								{
+									"key": "namaMitra",
+									"value": "Telyu"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Get Many Mitra",
 					"request": {
 						"method": "GET",
@@ -188,6 +215,65 @@
 							"path": [
 								"v1",
 								"mitra"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Kunjungan",
+			"item": [
+				{
+					"name": "Get Kunjungan by IDPengunjung",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8787/v1/kunjungan/:idPengunjung",
+							"host": [
+								"localhost"
+							],
+							"port": "8787",
+							"path": [
+								"v1",
+								"kunjungan",
+								":idPengunjung"
+							],
+							"variable": [
+								{
+									"key": "idPengunjung",
+									"value": "9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Pengunjung Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idPengunjung\": 9,\n    \"idMitra\": 3,\n    \"tanggal\": \"20-09-2021\",\n    \"checkin\": \"Yes\",\n    \"checkout\": \"No\",\n    \"statusKunjungan\": \"Selesai\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8787/v1/kunjungan",
+							"host": [
+								"localhost"
+							],
+							"port": "8787",
+							"path": [
+								"v1",
+								"kunjungan"
 							]
 						}
 					},
