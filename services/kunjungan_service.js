@@ -14,7 +14,7 @@ class KunjunganService {
         try {
             const connection = await this.dbPool.getConnection();
 
-            const queryResult = await connection.execute('SELECT * FROM kunjungan WHERE idPengunjung = ?', [id]);
+            const queryResult = await connection.execute('SELECT mitra.namaMitra, mitra.alamatMitra, kunjungan.tanggal, ROW_NUMBER() OVER()-1 AS num_row FROM kunjungan JOIN mitra  ON kunjungan.idMitra = mitra.idMitra WHERE idPengunjung = ?', [id]);
             if (queryResult[0].length < 1) throw new SQLNoRow();
 
             connection.release();
