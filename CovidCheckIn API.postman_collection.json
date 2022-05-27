@@ -2,7 +2,8 @@
 	"info": {
 		"_postman_id": "b9facade-62d0-41b8-af6e-7e2946122cb4",
 		"name": "CovidCheckIn API",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18852566"
 	},
 	"item": [
 		{
@@ -108,7 +109,115 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "9"
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Nama Pengunjung",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"namaPengunjung\": \"Rifky Lovanto 2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8787/v1/pengunjung/editnama/:username",
+							"host": [
+								"localhost"
+							],
+							"port": "8787",
+							"path": [
+								"v1",
+								"pengunjung",
+								"editnama",
+								":username"
+							],
+							"variable": [
+								{
+									"key": "username",
+									"value": "lovanto2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Telp Pengunjung",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"noHpPengunjung\": \"081234567890\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8787/v1/pengunjung/edittelp/:username",
+							"host": [
+								"localhost"
+							],
+							"port": "8787",
+							"path": [
+								"v1",
+								"pengunjung",
+								"edittelp",
+								":username"
+							],
+							"variable": [
+								{
+									"key": "username",
+									"value": "lovanto2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Alamat Pengunjung",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"alamatPengunjung\": \"Jl. Telekomunikasi no.100 terusan buah batu, asrama putra telkom university gedung 19 kamar 2180\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8787/v1/pengunjung/editalamat/:username",
+							"host": [
+								"localhost"
+							],
+							"port": "8787",
+							"path": [
+								"v1",
+								"pengunjung",
+								"editalamat",
+								":username"
+							],
+							"variable": [
+								{
+									"key": "username",
+									"value": "lovanto2"
 								}
 							]
 						}
