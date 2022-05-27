@@ -41,6 +41,9 @@ async function main() {
     router.get('/v1/pengunjung/login/:username', pengunjungHandler.getOnePengunjungByUsername.bind(pengunjungHandler));
     router.post('/v1/pengunjung', pengunjungHandler.createPengunjung.bind(pengunjungHandler));
     router.put('/v1/pengunjung/:id', pengunjungHandler.updatePengunjung.bind(pengunjungHandler));
+    router.put('/v1/pengunjung/editnama/:username', pengunjungHandler.updatePengunjungNama.bind(pengunjungHandler));
+    router.put('/v1/pengunjung/edittelp/:username', pengunjungHandler.updatePengunjungTelp.bind(pengunjungHandler));
+    router.put('/v1/pengunjung/editalamat/:username', pengunjungHandler.updatePengunjungAlamat.bind(pengunjungHandler));
 
     router.get('/v1/mitra', mitraHandler.getManyMitra.bind(mitraHandler));
     router.get('/v1/mitra/:id', mitraHandler.getOneMitra.bind(mitraHandler));

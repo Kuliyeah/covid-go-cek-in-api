@@ -52,6 +52,42 @@ class PengunjungHandler {
             response.error(res, err);
         }
     }
+
+    async updatePengunjungNama(req, res) {
+        const username = req.params.username;
+        const update = req.body;
+
+        try {
+            const result = await this.service.updatePengunjungNama(username, update);
+            response.success(res, 200, 'MODIFIED', 'an nama pengunjung data has successfuly modified', result, null);
+        } catch (err) {
+            response.error(res, err);
+        }
+    }
+
+    async updatePengunjungTelp(req, res) {
+        const username = req.params.username;
+        const update = req.body;
+
+        try {
+            const result = await this.service.updatePengunjungTelp(username, update);
+            response.success(res, 200, 'MODIFIED', 'an telp pengunjung data has successfuly modified', result, null);
+        } catch (err) {
+            response.error(res, err);
+        }
+    }
+
+    async updatePengunjungAlamat(req, res) {
+        const username = req.params.username;
+        const update = req.body;
+
+        try {
+            const result = await this.service.updatePengunjungAlamat(username, update);
+            response.success(res, 200, 'MODIFIED', 'an alamat pengunjung data has successfuly modified', result, null);
+        } catch (err) {
+            response.error(res, err);
+        }
+    }
 }
 
 module.exports = PengunjungHandler;

@@ -137,6 +137,87 @@ class PengunjungService {
             throw new InternalServerError('an error occurred while getting pengunjung data');
         }
     }
+
+    async updatePengunjungNama(username, params) {
+        const pengunjung = {
+            namaPengunjung: params.namaPengunjung,
+        };
+
+        try {
+            const connection = await this.dbPool.getConnection();
+
+            let queryResult = await connection.execute('SELECT usernamePengunjung FROM pengunjung WHERE usernamePengunjung = ?', [username]);
+            if (queryResult[0].length < 1) throw new SQLNoRow();
+
+            queryResult = await connection.execute('UPDATE pengunjung SET namaPengunjung = ? WHERE usernamePengunjung = ?', [
+                pengunjung.namaPengunjung, username
+            ]);
+
+            connection.release();
+
+            return queryResult[0]
+
+        } catch (err) {
+            console.error(err.message);
+
+            if (err instanceof SQLNoRow) throw new NotFoundError('pengunjung data is not found');
+            throw new InternalServerError('an error occurred while getting pengunjung data');
+        }
+    }
+
+    async updatePengunjungTelp(username, params) {
+        const pengunjung = {
+            noHpPengunjung: params.noHpPengunjung,
+        };
+
+        try {
+            const connection = await this.dbPool.getConnection();
+
+            let queryResult = await connection.execute('SELECT usernamePengunjung FROM pengunjung WHERE usernamePengunjung = ?', [username]);
+            if (queryResult[0].length < 1) throw new SQLNoRow();
+
+            queryResult = await connection.execute('UPDATE pengunjung SET noHpPengunjung = ? WHERE usernamePengunjung = ?', [
+                pengunjung.noHpPengunjung, username
+            ]);
+
+            connection.release();
+
+            return queryResult[0]
+
+        } catch (err) {
+            console.error(err.message);
+
+            if (err instanceof SQLNoRow) throw new NotFoundError('pengunjung data is not found');
+            throw new InternalServerError('an error occurred while getting pengunjung data');
+        }
+    }
+
+    async updatePengunjungAlamat(username, params) {
+        const pengunjung = {
+            alamatPengunjung: params.alamatPengunjung,
+        };
+
+        try {
+            const connection = await this.dbPool.getConnection();
+
+            let queryResult = await connection.execute('SELECT usernamePengunjung FROM pengunjung WHERE usernamePengunjung = ?', [username]);
+            if (queryResult[0].length < 1) throw new SQLNoRow();
+
+            queryResult = await connection.execute('UPDATE pengunjung SET alamatPengunjung = ? WHERE usernamePengunjung = ?', [
+                pengunjung.alamatPengunjung, username
+            ]);
+
+            connection.release();
+
+            return queryResult[0]
+
+        } catch (err) {
+            console.error(err.message);
+
+            if (err instanceof SQLNoRow) throw new NotFoundError('pengunjung data is not found');
+            throw new InternalServerError('an error occurred while getting pengunjung data');
+        }
+    }
 }
 
 module.exports = PengunjungService;
