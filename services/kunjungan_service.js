@@ -14,7 +14,26 @@ class KunjunganService {
         try {
             const connection = await this.dbPool.getConnection();
 
-            const queryResult = await connection.execute('SELECT mitra.namaMitra, mitra.alamatMitra, kunjungan.tanggal, ROW_NUMBER() OVER()-1 AS num_row FROM kunjungan JOIN mitra  ON kunjungan.idMitra = mitra.idMitra WHERE idPengunjung = ?', [id]);
+            const queryResult = await connection.execute('SELECT mitra.namaMitra, mitra.alamatMitra, kunjungan.tanggal FROM kunjungan JOIN mitra ON kunjungan.idMitra = mitra.idMitra WHERE idPengunjung = ?', [id]);
+            if (queryResult[0].length < 1) throw new SQLNoRow();
+
+            connection.release();
+
+            return queryResult[0]
+
+        } catch (err) {
+            console.error(err.message);
+
+            if (err instanceof SQLNoRow) throw new NotFoundError('kunjungan data is not found');
+            throw new InternalServerError('an error occurred while getting kunjungan data');
+        }
+    }
+
+    async getKunjunganByKeyword(id, keyword) {
+        try {
+            const connection = await this.dbPool.getConnection();
+
+            const queryResult = await connection.execute('SELECT mitra.namaMitra, mitra.alamatMitra, kunjungan.tanggal, kunjungan.idPengunjung FROM kunjungan JOIN mitra ON kunjungan.idMitra = mitra.idMitra WHERE (mitra.namaMitra LIKE ? OR mitra.alamatMitra LIKE ? OR kunjungan.tanggal LIKE ?) AND kunjungan.idPengunjung = ?', ['%' + keyword + '%', '%' + keyword + '%', '%' + keyword + '%', id]);
             if (queryResult[0].length < 1) throw new SQLNoRow();
 
             connection.release();

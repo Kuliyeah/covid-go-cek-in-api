@@ -14,6 +14,15 @@ class KunjunganHandler {
         }
     }
 
+    async getKunjunganByKeyword(req, res) {
+        try {
+            const result = await this.service.getKunjunganByKeyword(req.params.id, req.params.keyword);
+            response.success(res, 200, 'OK', 'detail of an kunjungan', result, null);
+        } catch (err) {
+            response.error(res, err);
+        }
+    }
+
     async createKunjungan(req, res) {
         try {
             const result = await this.service.createKunjungan(req.body);

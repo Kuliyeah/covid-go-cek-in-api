@@ -50,6 +50,7 @@ async function main() {
     router.get('/v1/mitra/cari/:nama', mitraHandler.getMitraByNama.bind(mitraHandler));
 
     router.get('/v1/kunjungan/:id', kunjunganHandler.getKunjunganByIDPengunjung.bind(kunjunganHandler));
+    router.get('/v1/kunjungan/:id/:keyword', kunjunganHandler.getKunjunganByKeyword.bind(kunjunganHandler));
     router.post('/v1/kunjungan', kunjunganHandler.createKunjungan.bind(kunjunganHandler));
 
     router.get('/', function(_, res) {
