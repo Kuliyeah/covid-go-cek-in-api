@@ -88,7 +88,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"usernamePengunjung\": \"lovanto2\",\n    \"passwordPengunjung\": \"lovanto123\",\n    \"nikPengunjung\": \"1234567890123456\",\n    \"namaPengunjung\": \"Rifky Lovanto\",\n    \"alamatPengunjung\": \"Jl. Telekomunikasi no.1 terusan buah batu, asrama putra telkom university gedung 9 kamar 218\",\n    \"noHpPengunjung\": \"087823837566\",\n    \"umurPengunjung\": 20,\n    \"jenisKelaminPengunjung\": \"Pria\",\n    \"statusKesehatan\": \"Negatif\"\n}",
+							"raw": "{\n    \"usernamePengunjung\": \"lovanto2\",\n    \"passwordPengunjung\": \"fda890869b33164fe9d02dbab35348b9\",\n    \"nikPengunjung\": \"1234567890123456\",\n    \"namaPengunjung\": \"Rifky Lovanto\",\n    \"alamatPengunjung\": \"Jl. Telekomunikasi no.1 terusan buah batu, asrama putra telkom university gedung 9 kamar 218\",\n    \"noHpPengunjung\": \"087823837566\",\n    \"umurPengunjung\": 20,\n    \"jenisKelaminPengunjung\": \"Pria\",\n    \"statusKesehatan\": \"Negatif\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -109,7 +109,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": null
+									"value": "9"
 								}
 							]
 						}
@@ -123,7 +123,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"namaPengunjung\": \"Rifky Lovanto 2\"\n}",
+							"raw": "{\n    \"namaPengunjung\": \"Rifky Lovanto\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -145,7 +145,7 @@
 							"variable": [
 								{
 									"key": "username",
-									"value": "lovanto2"
+									"value": null
 								}
 							]
 						}
@@ -354,6 +354,39 @@
 								{
 									"key": "idPengunjung",
 									"value": "9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Kunjungan by Keyword",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8787/v1/kunjungan/:id/:keyword",
+							"host": [
+								"localhost"
+							],
+							"port": "8787",
+							"path": [
+								"v1",
+								"kunjungan",
+								":id",
+								":keyword"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "9",
+									"type": "string"
+								},
+								{
+									"key": "keyword",
+									"value": "telyu",
+									"type": "string"
 								}
 							]
 						}
