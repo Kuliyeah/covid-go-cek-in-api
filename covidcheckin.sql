@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 18, 2022 at 12:10 AM
+-- Generation Time: May 31, 2022 at 03:46 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -64,7 +64,7 @@ CREATE TABLE `kunjungan` (
 INSERT INTO `kunjungan` (`idKunjungan`, `idPengunjung`, `idMitra`, `tanggal`, `checkin`, `checkout`, `statusKunjungan`) VALUES
 (7, 9, 2, '19-09-2021', 'Yes', 'Yes', 'Selesai'),
 (8, 9, 4, '29-09-2021', 'Yes', 'Yes', 'Dalam Kunjungan'),
-(9, 5, 3, '11-09-2021', 'Yes', 'No', 'Selesai');
+(9, 10, 3, '11-09-2021', 'Yes', 'No', 'Selesai');
 
 -- --------------------------------------------------------
 
@@ -117,9 +117,9 @@ CREATE TABLE `pengunjung` (
 --
 
 INSERT INTO `pengunjung` (`idPengunjung`, `usernamePengunjung`, `passwordPengunjung`, `nikPengunjung`, `namaPengunjung`, `alamatPengunjung`, `noHpPengunjung`, `umurPengunjung`, `jenisKelaminPengunjung`, `statusKesehatan`) VALUES
-(5, 'ainiChan', 'ainiChantikk123', '1234567890', 'Salsabilla Aini', 'Jl. Manasaja, Kec. Apasaja, Jateng', '083134141312', 22, 'Wanita', 'Negatif'),
-(6, 'ainiChanMuslim', 'ainiChantikk123', '0987654321', 'Aina Salsabilla Muslim', 'Bandar Jaya, Lampung', '081121311342', 21, 'Wanita', 'Negatif'),
-(9, 'lovanto2', 'fda890869b33164fe9d02dbab35348b9', '1234567098', 'Rifky Lovanto', 'Jl. Telekomunikasi no.1 terusan buah batu, asrama putra telkom university gedung 9 kamar 218', '087823837566', 20, 'Pria', 'Negatif');
+(9, 'lovanto2', 'fda890869b33164fe9d02dbab35348b9', '1234567890123456', 'Rifky Lovanto', 'Jl. Telekomunikasi no.1 terusan buah batu, asrama putra telkom university gedung 9 kamar 218', '087823837566', 20, 'Pria', 'Negatif'),
+(10, 'rifky55', '2cc5ebcb8ede862636b4e2d4fe59f9b9', '1234567890123456', 'Rifky Lovantoss', 'dddddd', '087823837566', 0, 'Pria', 'Negatif'),
+(11, 'lovanto', '202cb962ac59075b964b07152d234b70', '3938193', 'wadawdawdawda', 'awdawdawd w d awdwd awd awdwa daw dwa dawd aw dad awdwa w wd wda', '0389', 0, 'Wanita', 'Negatif');
 
 --
 -- Indexes for dumped tables
@@ -177,7 +177,7 @@ ALTER TABLE `mitra`
 -- AUTO_INCREMENT for table `pengunjung`
 --
 ALTER TABLE `pengunjung`
-  MODIFY `idPengunjung` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `idPengunjung` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables
