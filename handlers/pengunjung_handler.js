@@ -88,6 +88,18 @@ class PengunjungHandler {
             response.error(res, err);
         }
     }
+
+    async updatePassword(req, res) {
+        const username = req.params.username;
+        const update = req.body;
+
+        try {
+            const result = await this.service.updatePassword(username, update);
+            response.success(res, 200, 'MODIFIED', 'an password pengunjung data has successfuly modified', result, null);
+        } catch (err) {
+            response.error(res, err);
+        }
+    }
 }
 
 module.exports = PengunjungHandler;

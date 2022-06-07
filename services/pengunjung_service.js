@@ -218,6 +218,33 @@ class PengunjungService {
             throw new InternalServerError('an error occurred while getting pengunjung data');
         }
     }
+
+    async updatePassword(username, params) {
+        const pengunjung = {
+            passwordPengunjung: params.passwordPengunjung,
+        };
+
+        try {
+            const connection = await this.dbPool.getConnection();
+
+            let queryResult = await connection.execute('SELECT usernamePengunjung FROM pengunjung WHERE usernamePengunjung = ?', [username]);
+            if (queryResult[0].length < 1) throw new SQLNoRow();
+
+            queryResult = await connection.execute('UPDATE pengunjung SET passwordPengunjung = ? WHERE usernamePengunjung = ?', [
+                pengunjung.passwordPengunjung, username
+            ]);
+
+            connection.release();
+
+            return queryResult[0]
+
+        } catch (err) {
+            console.error(err.message);
+
+            if (err instanceof SQLNoRow) throw new NotFoundError('pengunjung data is not found');
+            throw new InternalServerError('an error occurred while getting pengunjung data');
+        }
+    }
 }
 
 module.exports = PengunjungService;

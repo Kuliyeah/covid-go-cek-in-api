@@ -7,7 +7,7 @@ const getCreateKunjunganModel = function() {
         tanggal: joi.string().required(),
         checkin: joi.string().required(),
         checkout: joi.string().required(),
-        statusKunjungan: joi.string().valid('Selesai', 'Dalam Kunjungan').required(),
+        statusKunjungan: joi.string().required(),
     });
     return model;
 }
