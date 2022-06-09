@@ -1,5 +1,5 @@
 # covid-go-cek-in-api
-A simple backend application that manage covid go check in apps
+A simple backend application that manage covid go check in apps.
 
 # How to run
 - Install Node.js (Latest version is recommended)
@@ -11,3 +11,5 @@ A simple backend application that manage covid go check in apps
 - Copy `.env.example` and change to `.env` then populate the enviroment base on your local configuration
 - To donwload dependecies run `npm install`
 - To start application run `npm start`
+- Ta daaa Its running now on your local
+- It will running on port 8787(default)
